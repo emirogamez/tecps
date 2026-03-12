@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Portal de Contenidos</title>
+<title>Portal de Material de Apoyo</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -12,82 +12,138 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#1d2671,#c33764);
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
 min-height:100vh;
 color:white;
-padding:40px;
 }
 
-h1{
+/* HERO */
+
+.hero{
+height:50vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-margin-bottom:40px;
-font-size:40px;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.8;
+font-size:18px;
+}
+
+/* GRID */
+
+.container{
+padding:40px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:30px;
 }
 
-.competencia{
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
+/* TARJETAS */
+
+.card{
+background:rgba(255,255,255,0.08);
 border-radius:20px;
 padding:25px;
-transition:0.3s;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+transition:0.4s;
+position:relative;
+overflow:hidden;
 }
 
-.competencia:hover{
-transform:translateY(-10px);
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-.competencia h2{
+/* ICONO */
+
+.icon{
+font-size:40px;
+margin-bottom:15px;
+color:#00e5ff;
+}
+
+/* TITULO */
+
+.card h2{
 margin-bottom:20px;
 font-size:22px;
 }
+
+/* TEMAS */
 
 .tema{
 background:white;
 color:#333;
 padding:12px;
 margin-bottom:10px;
-border-radius:10px;
+border-radius:8px;
 transition:0.2s;
-}
-
-.tema:hover{
-transform:scale(1.05);
-background:#f0f0f0;
 }
 
 .tema a{
 text-decoration:none;
 color:#333;
-font-weight:500;
 display:block;
+font-weight:500;
 }
 
-.icon{
-font-size:30px;
-margin-bottom:10px;
+.tema:hover{
+transform:translateX(8px);
+background:#e9f7ff;
+}
+
+/* EFECTO LINEA */
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(90deg,#00e5ff,#00ffa2);
 }
 
 </style>
-
 </head>
 
 <body>
 
+<div class="hero">
+
 <h1>📚 Programación de Software - Material de Apoyo</h1>
+<p>Recursos interactivos para el aprendizaje de software y tecnologías</p>
+
+</div>
+
+<div class="container">
 
 <div class="grid">
 
-<div class="competencia">
+<!-- TIC -->
+
+<div class="card">
+
 <div class="icon"><i class="fas fa-laptop"></i></div>
 <h2>Competencia TIC</h2>
 
@@ -105,9 +161,10 @@ Sistemas y paquetes ofimáticos
 
 </div>
 
+<!-- REQUISITOS -->
 
+<div class="card">
 
-<div class="competencia">
 <div class="icon"><i class="fas fa-project-diagram"></i></div>
 <h2>Establecer requisitos</h2>
 
@@ -121,9 +178,10 @@ Sistemas y paquetes ofimáticos
 
 </div>
 
+<!-- BASES DE DATOS -->
 
+<div class="card">
 
-<div class="competencia">
 <div class="icon"><i class="fas fa-database"></i></div>
 <h2>Diseño de bases de datos</h2>
 
@@ -137,52 +195,29 @@ Sistemas y paquetes ofimáticos
 
 </div>
 
+<!-- DESARROLLO -->
 
+<div class="card">
 
-<div class="competencia">
 <div class="icon"><i class="fas fa-code"></i></div>
 <h2>Desarrollo de software</h2>
 
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF9/index.html#/" target="_blank">
-Introducción a la algoritmia
-</a>
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF9/index.html#/" target="_blank">Introducción a la algoritmia</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF10/index.html#/" target="_blank">Solución de problemas con algoritmos</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF11/index.html#/" target="_blank">Codificación de algoritmos</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF12/index.html#/" target="_blank">Diseño de interfaces web</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF13/index.html#/" target="_blank">Construcción de aplicaciones web</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF14/index.html#/" target="_blank">Documentación y entrega de software</a></div>
+
+<div class="tema"><a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF15/index.html#/" target="_blank">Pruebas unitarias</a></div>
+
 </div>
 
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF10/index.html#/" target="_blank">
-Solución de problemas con algoritmos
-</a>
-</div>
-
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF11/index.html#/" target="_blank">
-Codificación de algoritmos
-</a>
-</div>
-
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF12/index.html#/" target="_blank">
-Diseño de interfaces web
-</a>
-</div>
-
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF13/index.html#/" target="_blank">
-Construcción de aplicaciones web
-</a>
-</div>
-
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF14/index.html#/" target="_blank">
-Documentación y entrega de software
-</a>
-</div>
-
-<div class="tema">
-<a href="https://zajuna.sena.edu.co/Repositorio/Titulada/institution/SENA/Tecnologia/233104/Contenido/OVA/CF15/index.html#/" target="_blank">
-Pruebas unitarias
-</a>
 </div>
 
 </div>
